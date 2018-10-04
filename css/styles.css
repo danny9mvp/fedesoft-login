@@ -1,0 +1,21 @@
+body{
+	background-image: url('https://orig00.deviantart.net/a712/f/2010/172/4/d/kisuke_urahara_by_asfalothgem.jpg');
+	background-size: cover;
+}
+.container{
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+#imgLogin{
+	border-radius: 100%;
+	width: 256px;
+	height: 256px;
+	background-color: green;
+}
+#containerRegistro{
+	display: none;
+}
+#fieldsetRegistro{
+	border: 1px solid #ccc;
+  	padding: 50px;
+}

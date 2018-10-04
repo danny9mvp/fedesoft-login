@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Inicio de sesión y registro</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="./css/styles.css">	
+</head>
+<body class="text-center">
+	<div id="containerLogin" class="container shadow p-3 mb-5 bg-white rounded w-50">
+		<form id="formLogin" onsubmit="event.preventDefault()">
+		<div class="row">				
+			<div class="col-4"></div>
+			<img id="imgLogin" src="https://i.pinimg.com/originals/aa/4f/27/aa4f2770081d12a70eaa86f5479f34aa.png" class="col-4">
+			<div class="col-4"></div>
+		</div>
+		<div class="row">
+			<div class="col-4"></div>
+			<fieldset class="form-group col-4">
+				<legend class="mb-3">Iniciar sesión</legend>				
+				<label id="lblErrUser" for="txtUser"></label>
+				<input type="text" id="txtUser" class="form-control" required="true" placeholder="Nombre de usuario" autofocus />
+				<label for="txtPass" class="sr-only">Contraseña</label>
+				<input type="password" id="txtPass" class="form-control" required="true" placeholder="Contraseña" maxlength="6" />
+				<input type="submit" class="btn btn-lg btn btn-primary btn-block my-4" value="Entrar" onclick="validarLogin()" />
+				<input type="button" class="btn btn-outline-secondary btn-block" onclick="mostrarContainerRegistro()" value="Registrarme"/>
+			</fieldset>
+			<div class="col-4"></div>
+		</div>
+		</form>
+	</div>			
+	<div id="containerRegistro" class="container shadow p-3 mb-5 bg-white rounded w-50">		
+		<form id="formRegistro" onsubmit="event.preventDefault()">
+			<div class="row">
+				<div class="col-2"></div>
+				<fieldset id="fieldsetRegistro" class="form-group col-8">
+					<legend>Registro</legend>
+					<input type="text" id="txtNewUser" class="form-control mb-4" required="true" placeholder="Usuario"/>
+					<input type="password" id="txtNewPass" class="form-control" required="true" maxlength="6" placeholder="Contraseña"/>
+					<label id="lblErrConfirmPass" for="txtConfirmPass"></label>
+					<input type="password" id="txtConfirmPass" class="form-control" required="true" maxlength="6" placeholder="Confirmar contraseña"/>
+					<label id="lblErrPhone" for="txtNewPhone"></label>
+					<input type="text" id="txtNewPhone" class="form-control" required="true" maxlength="7" placeholder="Número de teléfono"/>
+					<select class="form-control">	
+						<option disabled>- Indicativo</option>					
+						<option>051: Bogotá, Cundinamarca</option>
+						<option>052: Cauca, Nariño, Valle del Cauca</option>
+						<option>054: Antioquia, Córdoba, Chocó</option>
+						<option>055: Atlántico, Guajira, Magdalena, Sucre, Bolívar, Cesár</option>
+						<option>056: Caldas, Quindío, Risaralda</option>
+						<option>057: Arauca, Santander, Norte de Santander</option>
+						<option>058: Amazonas, Boyacá, Caquetá, Huila, Meta, Tolima, Casanare, Guainía, Guaviare, Putumayo, San Andrés, Vaupés, Vichada</option>
+					</select>
+					<label id="lblErrMail" for="txtNewEmail"></label>
+					<input type="text" id="txtNewEmail" class="form-control" required="true" placeholder="Correo electrónico" />
+					<input type="submit" id="btnRegistrar" class="btn btn-lg btn btn-primary btn-block my-4" value="Registrar" onclick="validarRegistro()" />
+					<input type="button" class="btn btn-outline-secondary btn-block" onclick="mostrarContainerLogin()" value="Iniciar sesión"/>
+				</fieldset>
+				<div class="col-2"></div>		
+			</div>
+		</form>				
+	</div>
+	<script type="text/javascript" src="./js/script.js"></script>
+</body>
+</html>
+
+<!--Inicio sesion US: PASS:
+Registro Nombre, Telefono, Correo, Contraseña y verificacion de contraseña
+validar que el correo sea válido, que el telefono sea correcto, max 6 caracteres pass; campos obligatorios-->
